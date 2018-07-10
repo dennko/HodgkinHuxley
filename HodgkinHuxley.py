@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 class Hodgkin:
     def __init__(self):
         self.dt = 0.01
-        self.t_max = 100
+        self.t_max = 50
 
         self.v = -65
         self.v_t = []
@@ -20,14 +20,14 @@ class Hodgkin:
         self.h = 0.5961
         self.h_t = []
 
-        self.external_current = 0.200
-        self.g_l = 0.003
-        self.g_k = 0.36
-        self.g_na = 1.2
-        self.e_l = -54.387
-        self.e_k = -77
-        self.e_na = 50
-        self.c_m = 0.010
+        self.external_current = 0.1
+        self.g_l = 0.3
+        self.g_k = 36
+        self.g_na = 120
+        self.e_l = -10.613
+        self.e_k = -12
+        self.e_na = 115
+        self.c_m = 0.001
 
     def step(self):
 
@@ -39,6 +39,7 @@ class Hodgkin:
         self.n += self.dn()
         self.m += self.dm()
         self.h += self.dh()
+        print (self.v)
 
     def dv(self):
         return (-self.i_m() + self.external_current) / self.c_m * self.dt
@@ -156,7 +157,7 @@ def c():
 
 print("External current = 200nA/mm^2...")
 a()
-print("Plot of firing rate vs external current...")
-b()
-print("Negative pulse...")
-c()
+# print("Plot of firing rate vs external current...")
+# b()
+# print("Negative pulse...")
+# c()
