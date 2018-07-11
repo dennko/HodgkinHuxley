@@ -1,9 +1,10 @@
-import math
-import numpy as np
-import matplotlib.pyplot as plt
+# lybrary importieren
+import math                     # lybrary für mathematische funktionen / rechenoperatoren
+import numpy as np              # lybrary für mathematische funktionen / rechenoperatoren
+import matplotlib.pyplot as plt # lybrary zum ausgeben und auswerten von graphen
 
 
-class Hodgkin:
+class Hodgkin:                  # Hodgkin-Klasse angelegt, mit deren Parametern und Konstanten
     def __init__(self):
         self.dt = 0.01
         self.t_max = 50
@@ -39,7 +40,7 @@ class Hodgkin:
         self.n += self.dn()
         self.m += self.dm()
         self.h += self.dh()
-        print (self.v)
+        print(self.v)
 
     def dv(self):
         return (-self.i_m() + self.external_current) / self.c_m * self.dt
