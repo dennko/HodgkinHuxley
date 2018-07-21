@@ -21,7 +21,7 @@ class Hodgkin:                  # Hodgkin-Klasse angelegt, mit deren Parametern 
         self.h = 0.5961
         self.h_t = []
 
-        self.external_current = 0.1
+        self.external_current = -5
         self.g_l = 0.3
         self.g_k = 36
         self.g_na = 120
